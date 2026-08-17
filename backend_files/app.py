@@ -41,7 +41,7 @@ def predict_batch():
     if file.filename == '':
         return jsonify({'error': 'No file selected'}), 400
     
-    # Read the incoming CSV bytes into a DataFrame
+    # Read incoming CSV bytes into DataFrame
     df_batch = pd.read_csv(io.BytesIO(file.read()))
     
     # Process features and run batch inference
